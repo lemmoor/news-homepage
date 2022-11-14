@@ -7,7 +7,7 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | News homepage</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,7 @@
       <div></div>
       <div></div>
     </div>
-    <nav>
+    <nav class="mobile-active">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">New</a></li>
@@ -67,17 +67,17 @@
     <section class="top-articles">
       <div class="article">
         <img src="./assets/images/image-retro-pcs.jpg" alt="">
-        <h3> Reviving Retro PCs</h3>
+        <h3><a href="#">Reviving Retro PCs</a></h3>
         <p> What happens when old PCs are given modern upgrades?</p>
       </div>
       <div class="article">
         <img src="./assets/images/image-top-laptops.jpg" alt="">
-        <h3> Top 10 Laptops of 2022</h3>
+        <h3><a href="#">Top 10 Laptops of 2022</a></h3>
         <p> Our best picks for various needs and budgets.</p>
       </div>
       <div class="article">
         <img src="./assets/images/image-gaming-growth.jpg" alt="">
-        <h3>The Growth of Gaming</h3>
+        <h3><a href="#">The Growth of Gaming</a></h3>
         <p> How the pandemic has sparked fresh opportunities.</p>
       </div>
     </section>
