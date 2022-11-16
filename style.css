@@ -58,7 +58,8 @@ header {
 }
 
 nav {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .mobile-burger {
@@ -73,9 +74,23 @@ nav {
     width: 40px;
     height: 4px;
     background-color: var(--very-dk-blue);
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-burger.close div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-burger.close div:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-burger.close div:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -10px);
 }
 
 header nav.mobile-active {
+    opacity: 1;
     position: absolute;
     top: 100%;
     right: 0;
@@ -83,6 +98,7 @@ header nav.mobile-active {
     height: 100vh;
     background-color: var(--off-white);
     display: block;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .mobile-active ul {
@@ -93,6 +109,7 @@ header nav.mobile-active {
     color: var(--very-dk-blue);
     padding: 2rem;
     margin-top: 5rem;
+    z-index: 900 !important;
 }
 
 .mobile-active::after {
@@ -105,15 +122,11 @@ header nav.mobile-active {
     position: absolute;
     left: -100%;
     top: -5rem;
-    z-index: 1;
-    isolation: isolate;
 }
 
 body:has(.mobile-active) {
     overflow: hidden;
 }
-
-.mobile-show {}
 
 header img {
     height: 100%;
@@ -184,6 +197,7 @@ main {
     gap: 2rem;
     counter-reset: article-number;
     margin: 0 auto;
+    width: 100%;
 }
 
 .top-articles .article {
@@ -195,7 +209,7 @@ main {
     align-items: center;
     align-content: center;
     max-height: 12rem;
-    max-width: 21rem;
+    max-width: 21.2rem;
 }
 
 .top-articles .article h3 {
@@ -269,6 +283,8 @@ main {
 
     header nav {
         display: block;
+        opacity: 1;
+        position: static;
     }
 
     header nav ul {
